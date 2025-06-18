@@ -6,7 +6,7 @@ public class Main {
         Document wordDoc = wordFactory.createDocument();
         wordDoc.open();
         wordDoc.close();
-
+ 
         // Create PDF document using the factory method
         DocumentFactory pdfFactory = new PdfDocumentFactory();
         Document pdfDoc = pdfFactory.createDocument();
