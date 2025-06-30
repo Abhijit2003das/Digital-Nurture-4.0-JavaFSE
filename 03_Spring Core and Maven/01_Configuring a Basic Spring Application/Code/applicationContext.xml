@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the BookRepository bean -->
+    <!-- Spring will create an instance of com.library.repository.BookRepository -->
+    <bean id="bookRepository" class="com.library.repository.BookRepository">
+        <!-- No properties to set for now, as it has a default constructor -->
+    </bean>
+
+    <!-- Define the BookService bean -->
+    <!-- Spring will create an instance of com.library.service.BookService -->
+    <!-- It will also inject the 'bookRepository' bean into BookService's constructor -->
+    <bean id="bookService" class="com.library.service.BookService">
+        <!-- Constructor-based dependency injection -->
+        <constructor-arg ref="bookRepository"/>
+        <!-- Alternatively, for setter injection, if BookService had a setter:
+        <property name="bookRepository" ref="bookRepository"/>
+        -->
+    </bean>
+
+</beans>
