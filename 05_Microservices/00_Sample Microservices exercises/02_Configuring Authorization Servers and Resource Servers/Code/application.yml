@@ -1,0 +1,24 @@
+# Server configuration
+server:
+  port: 8080 # The port on which your Spring Boot application will run
+
+# Spring Security OAuth2 Resource Server configuration
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # The issuer URI of the Authorization Server that issues the JWTs.
+          # Spring Security will use this URI to discover the JWKS (JSON Web Key Set) endpoint
+          # (typically at <issuer-uri>/.well-known/openid-configuration or <issuer-uri>/.well-known/oauth-authorization-server)
+          # to retrieve the public keys necessary to validate the signature of incoming JWTs.
+          #
+          # IMPORTANT: REPLACE 'https://issuer.example.com' with the actual issuer URI
+          # of your Authorization Server (e.g., Auth0, Okta, Keycloak, or Google).
+          #
+          # Examples:
+          # For Google: https://accounts.google.com
+          # For Auth0: https://YOUR_DOMAIN.auth0.com/
+          # For Okta: https://YOUR_DOMAIN.okta.com/oauth2/default (or similar)
+          # For Keycloak: http://localhost:8080/realms/YOUR_REALM_NAME (if local)
+          issuer-uri: https://accounts.google.com # <-- REPLACE THIS PLACEHOLDER WITH YOUR ACTUAL ISSUER URI

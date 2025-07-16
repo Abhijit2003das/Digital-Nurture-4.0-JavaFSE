@@ -1,0 +1,12 @@
+# Server configuration
+server:
+  port: 8080 # The port on which your Spring Boot application will run
+
+# JWT configuration properties
+spring:
+  security:
+    jwt:
+      # Secret key used for signing and verifying JWTs.
+      # MUST be a strong, randomly generated string. For HS256, at least 32 characters long.
+      # DO NOT use this exact key in production. Generate a new one.
+      secret: aVeryLongAndSecureSecretKeyForJWTAuthentication1234567890

@@ -1,0 +1,17 @@
+server:
+  port: 8082 # Default port for inventory service
+
+spring:
+  application:
+    name: inventory-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ # Eureka server URL
+  instance:
+    preferIpAddress: true # Register with IP address instead of hostname
+
+# Inventory Service Specific Configuration
+inventory:
+  message: "Hello from Inventory Service (Configured via Config Server)!"

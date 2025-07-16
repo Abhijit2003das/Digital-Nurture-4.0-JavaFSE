@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth2 Centralized Authentication</title>
+    <style>
+        /* Basic styling for readability and layout */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as per guidelines */
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top for better content flow */
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%; /* Fluid width */
+            box-sizing: border-box; /* Include padding in width */
+            margin-top: 50px; /* Add some top margin */
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        p {
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        img {
+            border-radius: 50%; /* Circular image */
+            width: 120px; /* Slightly larger image */
+            height: 120px;
+            object-fit: cover;
+            display: block; /* Center the image */
+            margin: 15px auto 25px auto;
+            border: 3px solid #3498db; /* Blue border */
+        }
+        .attributes {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            overflow-x: auto; /* Allow horizontal scrolling for long content */
+        }
+        .attributes pre {
+            white-space: pre-wrap; /* Wrap long lines */
+            word-wrap: break-word;
+            font-size: 0.9em;
+            color: #2c3e50;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .login-button, .logout-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px; /* Rounded corners for buttons */
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
+        }
+        .login-button {
+            background-color: #3498db; /* Blue for login */
+        }
+        .login-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .logout-button {
+            background-color: #e74c3c; /* Red for logout */
+        }
+        .logout-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 20px;
+                padding: 20px;
+            }
+            img {
+                width: 100px;
+                height: 100px;
+            }
+            .login-button, .logout-button {
+                padding: 10px 20px;
+                font-size: 14px;
+                margin: 5px;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                margin-top: 10px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+
+        <!-- Conditional rendering based on whether a user is logged in -->
+        <div th:if="${userName != 'Guest'}">
+            <p>You are logged in as:</p>
+            <p><strong>Name:</strong> <span th:text="${userName}"></span></p>
+            <p><strong>Email:</strong> <span th:text="${userEmail}"></span></p>
+            <div th:if="${userPicture}">
+                <p><strong>Profile Picture:</strong></p>
+                <img th:src="${userPicture}" alt="Profile Picture"/>
+            </div>
+            <p><strong>Raw User Attributes:</strong></p>
+            <div class="attributes">
+                <pre th:text="${userAttributes}"></pre>
+            </div>
+            <div class="button-group">
+                <a class="logout-button" href="/logout">Logout</a>
+            </div>
+        </div>
+        <div th:unless="${userName != 'Guest'}">
+            <p>You are not logged in. Please log in to view your profile.</p>
+            <div class="button-group">
+                <!-- This link initiates the Google OAuth2 login flow -->
+                <a class="login-button" href="/oauth2/authorization/google">Login with Google</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+server:
+  port: 8081 # Default port for product service
+
+spring:
+  application:
+    name: product-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ # Eureka server URL
+  instance:
+    preferIpAddress: true # Register with IP address instead of hostname
+
+# Product Service Specific Configuration
+product:
+  message: "Hello from Product Service (Configured via Config Server)!"
