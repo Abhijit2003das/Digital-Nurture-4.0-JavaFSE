@@ -1,0 +1,24 @@
+/* src/CohortDetails.module.css */
+.box {
+  width: 300px; /* [cite: 89] */
+  display: inline-block; /* [cite: 90] */
+  margin: 10px; /* Overall 10px margin [cite: 91] */
+  padding-top: 10px; /* Top and bottom padding as 10px [cite: 92] */
+  padding-bottom: 10px; /* Top and bottom padding as 10px [cite: 92] */
+  padding-left: 20px; /* Left and right padding as 20px [cite: 93] */
+  padding-right: 20px; /* Left and right padding as 20px [cite: 93] */
+  border: 1px solid black; /* 1 px border in black color [cite: 94] */
+  border-radius: 10px; /* A border radius of 10px [cite: 95] */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Adding a subtle shadow */
+}
+
+/* Define a css style for html <dt> element using tag selector. */
+dt {
+  font-weight: 500; /* Set the font weight to 500. [cite: 96] */
+  margin-top: 8px; /* Add some space above dt elements */
+}
+
+dd {
+  margin-left: 0; /* Remove default indent for dd */
+  margin-bottom: 4px; /* Add some space below dd elements */
+}

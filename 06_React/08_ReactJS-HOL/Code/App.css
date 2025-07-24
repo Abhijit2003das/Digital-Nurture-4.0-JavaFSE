@@ -1,0 +1,108 @@
+/* General styling for the entire application */
+.App {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  min-height: 100vh; /* Ensure the app takes at least the full viewport height */
+  background-color: #f0f2f5; /* Light grey background */
+  font-family: 'Inter', sans-serif; /* Use Inter font, with a fallback */
+  padding: 20px; /* Add some padding around the content */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Container for the CountPeople component */
+.count-people-container {
+  display: flex;
+  flex-direction: column; /* Stack sections vertically on small screens */
+  gap: 30px; /* Space between the login and exit sections */
+  padding: 30px;
+  background-color: #ffffff; /* White background for the container */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  align-items: center; /* Center items within the container */
+}
+
+/* Styling for individual count sections (Login/Exit) */
+.count-section {
+  display: flex;
+  align-items: center; /* Align button and text vertically */
+  gap: 15px; /* Space between button and text */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: center; /* Center items when wrapped */
+}
+
+/* Base styling for buttons */
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px; /* Slightly more rounded buttons */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
+}
+
+/* Specific styling for the Login button */
+.login-button {
+  background-color: #4CAF50; /* Green */
+}
+
+.login-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Specific styling for the Exit button */
+.exit-button {
+  background-color: #f44336; /* Red */
+}
+
+.exit-button:hover {
+  background-color: #da190b; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Styling for the count display text */
+.count-display {
+  font-size: 1.5rem; /* Larger font size for the count */
+  color: #333; /* Dark grey text color */
+  font-weight: 500;
+  min-width: 200px; /* Ensure consistent width for text display */
+  text-align: left; /* Align text to the left within its space */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (min-width: 768px) {
+  .count-people-container {
+    flex-direction: row; /* Arrange sections side-by-side on larger screens */
+    gap: 50px; /* More space between sections */
+    padding: 40px 60px; /* More padding */
+  }
+
+  .count-section {
+    flex-direction: row; /* Keep elements in a row */
+    justify-content: flex-start; /* Align to start */
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .count-display {
+    font-size: 1.3rem;
+    min-width: unset; /* Remove min-width on very small screens */
+    text-align: center; /* Center text when wrapped */
+  }
+
+  .count-section {
+    flex-direction: column; /* Stack button and text vertically */
+    gap: 10px; /* Reduce gap */
+  }
+}

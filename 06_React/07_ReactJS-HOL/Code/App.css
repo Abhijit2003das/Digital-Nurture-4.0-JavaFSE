@@ -1,0 +1,85 @@
+/* Basic styling for the entire application container */
+.App {
+  text-align: center; /* Center-align all content within the App */
+  font-family: 'Inter', sans-serif; /* Use Inter font, with a fallback to generic sans-serif */
+  padding: 20px; /* Add some padding around the content */
+  background-color: #f9f9f9; /* Light background color */
+  min-height: 100vh; /* Ensure the app takes at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+}
+
+/* Styling for the main heading */
+h1 {
+  color: #228B22; /* Forest Green color for the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  font-size: 2.5rem; /* Larger font size for prominence */
+  font-weight: 700; /* Bold font weight */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle text shadow */
+}
+
+/* Styling for the table that displays items */
+table {
+  width: 90%; /* Make table responsive, taking 90% of parent width */
+  max-width: 600px; /* Max width to prevent it from becoming too wide on large screens */
+  margin: 20px auto; /* Center the table horizontally and add vertical margin */
+  border-collapse: collapse; /* Collapse borders for a clean look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 10px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+/* Styling for table headers and data cells */
+th, td {
+  border: 1px solid #e0e0e0; /* Light grey border for cells */
+  padding: 12px 15px; /* Ample padding for readability */
+  text-align: left; /* Align text to the left */
+  font-size: 1rem; /* Standard font size */
+}
+
+/* Styling for table headers */
+th {
+  background-color: #e6ffe6; /* Very light green background for headers */
+  color: #333; /* Darker text color for headers */
+  font-weight: 600; /* Slightly bolder headers */
+  text-transform: uppercase; /* Uppercase text for headers */
+}
+
+/* Styling for table rows */
+tr:nth-child(even) {
+  background-color: #f0f0f0; /* Zebra striping for even rows */
+}
+
+tr:hover {
+  background-color: #e0ffe0; /* Light green highlight on row hover */
+  cursor: pointer; /* Indicate interactivity on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+
+  table {
+    width: 95%; /* Make table wider on smaller screens */
+  }
+
+  th, td {
+    padding: 10px; /* Reduce padding slightly */
+    font-size: 0.9rem; /* Smaller font size for cells */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem; /* Further adjust heading size */
+  }
+
+  th, td {
+    padding: 8px; /* Further reduce padding */
+    font-size: 0.85rem; /* Further reduce font size */
+  }
+}
