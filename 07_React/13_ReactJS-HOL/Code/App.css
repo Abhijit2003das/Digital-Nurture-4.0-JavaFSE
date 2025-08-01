@@ -1,0 +1,151 @@
+/* General styling for the entire application */
+.App {
+  font-family: 'Inter', sans-serif; /* Using Inter font */
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f7f6; /* Light grey background */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Container for the three detail cards */
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+  justify-content: center; /* Center cards horizontally */
+  gap: 30px; /* Space between cards */
+  padding: 20px;
+}
+
+/* Styling for each individual detail card (Book, Blog, Course) */
+.detail-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  flex: 1; /* Allow cards to grow and shrink */
+  min-width: 280px; /* Minimum width for each card */
+  max-width: 350px; /* Maximum width for each card */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally within the card */
+  text-align: left; /* Align text within card to left */
+  border-right: 5px solid #28a745; /* Green vertical line on the right */
+  box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+/* Title within each card */
+.card-title {
+  color: #28a745; /* Green color for card titles */
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0ffe0; /* Light green underline */
+  width: 100%; /* Make title underline span full width */
+  text-align: center;
+}
+
+/* Styling for lists within cards */
+.details-list {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Ensure list takes full width of card */
+}
+
+.list-item {
+  background-color: #f9fcfb; /* Very light green background for list items */
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  color: #34495e;
+}
+
+.list-item h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+  color: #2c3e50;
+}
+
+.list-item p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Blog specific sections */
+.blog-section {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.blog-section:last-child {
+  border-bottom: none; /* No border for the last section */
+}
+
+.blog-section h3, .blog-section h4 {
+  margin: 0 0 8px 0;
+  color: #34495e;
+}
+
+.blog-section p {
+  margin: 0;
+  color: #555;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .dashboard-container {
+    gap: 20px; /* Reduce gap */
+    padding: 15px;
+  }
+  .detail-card {
+    min-width: 300px; /* Adjust min-width */
+    max-width: 45%; /* Two columns on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  .dashboard-container {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center;
+    gap: 25px;
+  }
+  .detail-card {
+    max-width: 90%; /* Take more width on small screens */
+    min-width: unset; /* Remove min-width constraint */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  .detail-card {
+    padding: 20px;
+  }
+  .card-title {
+    font-size: 1.5em;
+  }
+  .list-item h3 {
+    font-size: 1.1em;
+  }
+  .list-item p {
+    font-size: 0.9em;
+  }
+}

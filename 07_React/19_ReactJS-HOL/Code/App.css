@@ -1,0 +1,84 @@
+/* General styling for the entire application */
+.App {
+  font-family: 'Inter', sans-serif; /* Using Inter font */
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f2f5; /* Light grey background */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Styling for the repository list */
+.repo-list {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0 auto; /* Center the list */
+  max-width: 600px; /* Limit width for better readability */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.repo-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee; /* Light border between items */
+  text-align: left;
+  font-size: 1.1em;
+  color: #34495e;
+  transition: background-color 0.2s ease;
+}
+
+.repo-item:last-child {
+  border-bottom: none; /* No border for the last item */
+}
+
+.repo-item:hover {
+  background-color: #f9f9f9; /* Slight highlight on hover */
+}
+
+/* Loading and error messages */
+.loading-message, .error-message, .no-repos-message {
+  font-size: 1.5em;
+  color: #555;
+  margin-top: 50px;
+}
+
+.error-message {
+  color: #dc3545; /* Red for errors */
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  .repo-list {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .repo-item {
+    font-size: 1em;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  .repo-list {
+    padding: 10px;
+  }
+  .repo-item {
+    font-size: 0.9em;
+  }
+}

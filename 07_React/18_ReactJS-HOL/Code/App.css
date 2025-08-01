@@ -1,0 +1,124 @@
+/* General styling for the entire application */
+.App {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #333;
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Container for the list of cohort cards */
+.cohort-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+/* Styling for individual cohort detail cards */
+.cohort-details-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 300px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cohort-details-card:hover {
+  transform: translateY(-5px);
+}
+
+.cohort-details-card h3 {
+  color: #2c3e50;
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  width: 100%;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+.cohort-details-card p {
+  color: #555;
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+.cohort-details-card strong {
+  color: #34495e;
+}
+
+.view-details-button {
+  background-color: #3498db; /* Blue button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-self: center; /* Center the button within the card */
+}
+
+.view-details-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* No cohort data message */
+.no-cohort {
+  font-size: 1.2em;
+  color: #777;
+  margin-top: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  .cohort-details-card {
+    width: 90%; /* Make cards wider on small screens */
+    max-width: 350px;
+  }
+  .cohort-details-card h3 {
+    font-size: 1.5em;
+  }
+  .cohort-details-card p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  .cohort-details-card {
+    padding: 20px;
+  }
+  .cohort-details-card h3 {
+    font-size: 1.3em;
+  }
+  .view-details-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}

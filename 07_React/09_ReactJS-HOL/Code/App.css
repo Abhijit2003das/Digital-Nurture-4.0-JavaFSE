@@ -1,0 +1,161 @@
+/* General styling for the entire application */
+.App {
+  font-family: 'Inter', sans-serif; /* Use Inter font */
+  text-align: center; /* Center-align text globally */
+  padding: 20px; /* Add padding around the content */
+  background-color: #f4f7f6; /* Light background color */
+  min-height: 100vh; /* Ensure it takes full viewport height */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Styling for main titles */
+h1 {
+  color: #2c3e50; /* Dark grey color */
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Styling for section titles (h2) */
+h2.section-title, h2.main-section-title {
+  color: #34495e; /* Slightly lighter dark grey */
+  font-size: 2.2rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ecf0f1; /* Light grey underline */
+  padding-bottom: 10px;
+  display: inline-block; /* To make border-bottom fit content */
+}
+
+/* Styling for sub-section titles (h3) */
+h3.team-title {
+  color: #2980b9; /* Blue color for team titles */
+  font-size: 1.8rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Container for player lists */
+.player-list-container, .indian-players-container {
+  background-color: #ffffff; /* White background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  padding: 30px;
+  margin: 30px auto; /* Center the container with margin */
+  max-width: 800px; /* Max width for better readability */
+  text-align: left; /* Align text left within these containers */
+}
+
+/* Styling for unordered lists of players */
+.player-ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for individual list items (players) */
+.player-item {
+  background-color: #ecf0f1; /* Light grey background for list items */
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px; /* Rounded corners for items */
+  display: flex;
+  justify-content: space-between; /* Space out name and score */
+  align-items: center;
+  font-size: 1.1rem;
+  color: #34495e;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for items */
+}
+
+/* Styling for player scores */
+.player-score {
+  font-weight: 700; /* Bold score */
+  color: #e74c3c; /* Red color for scores */
+  background-color: #fde0dc; /* Light red background for score */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Horizontal rule (divider) styling */
+.divider {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  margin: 40px 0; /* Space above and below the divider */
+}
+
+/* Styling for the toggle button */
+.toggle-button {
+  background-color: #3498db; /* Blue color */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px; /* Space below the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2.section-title, h2.main-section-title {
+    font-size: 1.8rem;
+  }
+
+  h3.team-title {
+    font-size: 1.5rem;
+  }
+
+  .player-list-container, .indian-players-container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 95%; /* Adjust max-width for smaller screens */
+  }
+
+  .player-item {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .toggle-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2.section-title, h2.main-section-title {
+    font-size: 1.5rem;
+  }
+
+  h3.team-title {
+    font-size: 1.3rem;
+  }
+
+  .player-item {
+    flex-direction: column; /* Stack name and score vertically */
+    align-items: flex-start; /* Align to start when stacked */
+    gap: 5px; /* Small gap between stacked items */
+  }
+
+  .player-score {
+    align-self: flex-end; /* Align score to the end when stacked */
+  }
+}
